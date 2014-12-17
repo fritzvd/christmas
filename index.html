@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <style>
+body {
+  font-family: sans-serif;
+  background: #000;
+}
+
+.module {
+  width: 500px;
+  margin: 20px auto;
+}
+
+.discussion {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 50px 0;
+}
+
+.discussion li {
+  overflow: hidden;
+  display: flex;
+}
+.avatar {
+  width: 80px;
+}
+.avatar img {
+  width: 100%;
+  display: block;
+}
+
+.other .avatar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid white;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+
+.messages {
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.messages p {
+  font-size: 1rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+.messages time {
+  font-size: 0.7rem;
+  color: #aaa;
+}
+
+.tiny {
+  transform: scale(0.0); 
+  transform-origin: 0px 0px;
+  transition: 1s ease-in;
+}
+
+    </style>
+  </head>
+  <body>
+   <section class="module">
+     <ol class="discussion">
+      <li  id="message" class="other tiny">
+      <div class="avatar">
+        <img src="bob.png" />
+      </div>
+      <div class="messages">
+        <p>Hi guys, I won't be making it to practice. I'm home sick with stomach cramps. It might be the snow I ate. yolo</p>
+        <time datetime="2009-11-13T20:00">Bob of Mexico • 1 sec</time>
+      </div>
+      </li>
+     </ol>
+   </section>
+   
+   <script>
+    setTimeout(function () {
+         var message = document.getElementById('message');
+         message.classList.remove('tiny');
+        }, 500);
+   </script>
+
+
+
+  </body>
+  </html>
