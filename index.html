@@ -60,10 +60,14 @@ body {
   color: #aaa;
 }
 
-.tiny {
-  transform: scale(0.0); 
-  transform-origin: 0px 0px;
-  transition: 1s ease-in;
+.discussion li {
+  transform: scale(0); 
+  transform-origin: top left;
+  transition: transform .2s ease-in;
+}
+
+.discussion li.fullscale {
+  transform: scale(1.0); 
 }
 
     </style>
@@ -71,7 +75,7 @@ body {
   <body>
    <section class="module">
      <ol class="discussion">
-      <li  id="message" class="other tiny">
+      <li id="message" class="other">
       <div class="avatar">
         <img src="bob.png" />
       </div>
@@ -86,8 +90,8 @@ body {
    <script>
     setTimeout(function () {
          var message = document.getElementById('message');
-         message.classList.remove('tiny');
-        }, 500);
+         message.classList.add('fullscale');
+        }, 1000);
    </script>
 
 
